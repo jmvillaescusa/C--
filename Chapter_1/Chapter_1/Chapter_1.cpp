@@ -9,7 +9,7 @@
 	3. Defining a new mane for existing types allows quicker access to that combined type for initialising new variables
 
 	4. ++variable/--variable - prefix increment operator - will increase/decrease the variable value by 1 first in a complex equation
-	   variable++/variable-- - postfix increment operator - will increase/decrease the variable value by 1 after in a complex equation
+	   variable++/variable-- - postfix increment operator - will increase/decrease the variable value by 1 after the complex equation finishes
 
 	5. Constants are used for variables with a unchangable value, often seen with all caps.
 	   They are for keeping the coding more consistent.
