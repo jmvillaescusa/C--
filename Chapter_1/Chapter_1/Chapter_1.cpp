@@ -35,13 +35,12 @@ int numberThree;
 
 int main()
 {
-	// 2. 
-	cout << "Seven divided by three is " << 7 / 3 << endl;  // 2
-	//since both vales are whole numbers, the result will be a whole number
-	cout << "Seven divided by three is " << 7.0 / 3 << endl; // 2.33333
-	//one of the values is a float, thus the result will be shown as a float
-	cout << "Seven divided by three is " << 7.0 / 3.0 << endl << endl; //  2.33333
-	//same reason as above
+	/* 2. cout << "Seven divided by three is " << 7 / 3 << endl;             = 2
+	since both vales are whole numbers, the result will be a whole number
+	      cout << "Seven divided by three is " << 7.0 / 3 << endl;           = 2.33333
+	one of the values is a float, thus the result will be shown as a float
+	      cout << "Seven divided by three is " << 7.0 / 3.0 << endl << endl; = 2.33333
+	same reason as above */
 
 	// 3. 
 	cout << "Enter the first number: \n";
@@ -50,7 +49,7 @@ int main()
 	cin >> numberTwo;
 	cout << "Enter the last number: \n";
 	cin >> numberThree;
-	cout << "\nAverage: " << (numberOne + numberTwo + numberThree) / 3; 
+	cout << "\nAverage: " << (numberOne + numberTwo + numberThree) / 3.0; 
 
 	cin >> pause;
 	return 0;
