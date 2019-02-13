@@ -16,7 +16,6 @@
 	   Examples include point values.
 */
 
-#include "pch.h"
 #include <iostream>
 using namespace std;
 
