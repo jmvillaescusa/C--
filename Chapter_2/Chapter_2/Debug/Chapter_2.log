@@ -1,3 +1,0 @@
-﻿  pch.cpp
-  Chapter_2.cpp
-LINK : fatal error LNK1104: cannot open file 'C:\_Projects\GameDev\C--\Chapter_2\Debug\Chapter_2.exe'
