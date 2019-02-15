@@ -90,7 +90,6 @@ int main()
 		}
 		
 	} while (guess != myNumber);
-	
 
 	return 0;
 }
