@@ -1,0 +1,3 @@
+﻿  Chapter_3.cpp
+c:\users\jaimeson\documents\github\c--\chapter_3\chapter_3\chapter_3.cpp(79): warning C4244: '*=': conversion from 'double' to 'int', possible loss of data
+  Chapter_3.vcxproj -> C:\Users\Jaimeson\Documents\GitHub\C--\Chapter_3\Debug\Chapter_3.exe
