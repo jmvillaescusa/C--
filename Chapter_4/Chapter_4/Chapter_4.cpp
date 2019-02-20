@@ -19,7 +19,7 @@ int main()
 	bool addingGame = false;
 	bool program = false;
 
-	cout << "\t\tWelcome to the Video Game Listing Program!\n";
+	cout << "\t\tWelcome to the Video Game Lister!\n";
 	cout << "\nHere you can type in your favourite games and display them in a list.\n";
 	cout << "Type 'show' to display all your games.\n";
 	cout << "Type 'add' to add a game to the list, then press Enter for a new game\n"; 
@@ -67,6 +67,16 @@ int main()
 			cout << "\nThank you for using this program.\n";
 			program = true;
 		}
+
+		/*
+			2. They forgot to code the increment to each score
+			   What is currently doing is just going through the vector with iter,
+			   but not changing any score
+		*/
+
+		/*
+			3.
+		*/
 
 	} while (!program);
 
