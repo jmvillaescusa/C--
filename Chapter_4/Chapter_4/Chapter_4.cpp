@@ -1,6 +1,21 @@
 /*
 	Questions
+	1. STL provides a collection of pre-made programming work, from containers, algorithms,
+	   iterators, and many more.
+	   This makes the coding much easier for the programmers
 
+	2. Vectors are similar to arrays, but they are able to change in size where arrays cannot
+	   Vectors are compatible with the STL algorithms and arrays aren't
+
+	3. Enemies
+	   Inventory
+	   Leaderboard scores
+
+	4. Vectors do use accumulate memory than arrays 
+	   For memory efficiency, arrays are recommended
+
+	5. Planning for programs will save you time and becomes less stressful to code
+	   Without it, frustration ensues and time will be wasted, resulting on a sub-par program
 */
 
 #include <iostream>
@@ -79,7 +94,7 @@ int main()
 			   Shuffle the letters of that word
 			   Start the game loop
 		           Introduce the player the game, and reveal the shuffuled word
-				   Ask the player to either unshuffle the word or give them the hint when promped
+				   Ask the player to either unshuffle the word or give them the hint when prompted
 				   If they get it right
 				       Congratulate the player, and end the loop
 				   Otherwise
