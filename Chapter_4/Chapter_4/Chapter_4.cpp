@@ -34,7 +34,7 @@ int main()
 		if (game == "add") {
 			addingGame = false;
 			cout << "\nWhat game(s) do you like to add?\n";
-			while (!addingGame || game.length() == 0) {
+			while (!addingGame) {
 				getline(cin, game);
 				if (game == "stop") {
 					addingGame = true;
@@ -74,7 +74,17 @@ int main()
 		*/
 
 		/*
-			3.
+			3. Create a list of words to shuffle with hints attached to them
+			   Tell the program to pick a random word
+			   Shuffle the letters of that word
+			   Start the game loop
+		           Introduce the player the game, and reveal the shuffuled word
+				   Ask the player to either unshuffle the word or give them the hint when promped
+				   If they get it right
+				       Congratulate the player, and end the loop
+				   Otherwise
+				       Tell to keep trying, until they get it right
+			   End the program
 		*/
 
 	} while (!program);
