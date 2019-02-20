@@ -28,7 +28,6 @@ int main()
 	// Exercises 
 	// 1. List of Games
 	vector<string> videoGames;
-	vector<string>::const_iterator iter;
 	string game;
 	int index;
 	bool addingGame = false;
