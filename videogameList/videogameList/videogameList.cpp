@@ -27,15 +27,16 @@ Pseudo Code
 #include <vector>
 
 using namespace std;
+vector<string> videoGames;
 
-void toAdd();
+vector<string> toAdd();
+void toShow();
+void toRemove(int ind);
 
 int main()
 {
-	vector<string> videoGames;
-	string game;
 	int index;
-	bool addingGame = false;
+	string command;
 	bool program = false;
 
 	cout << "\t\tWelcome to the Video Game Lister!\n";
@@ -49,40 +50,20 @@ int main()
 
 	do {
 		cout << "\nWhat do you like to do?\n";
-		cin >> game;
+		cin >> command;
 
-		if (game == "add") {
-			addingGame = false;
-			cout << "\nWhat game(s) do you like to add?\n";
-			while (!addingGame) {
-				getline(cin, game);
-				if (game == "stop") {
-					addingGame = true;
-				}
-				else {
-					if (!game.empty()) {
-						videoGames.push_back(game);
-					}
-					else {
-						NULL;
-					}
-				}
-			}
+		if (command == "add") {
+			videoGames = toAdd();
 		}
-		else if (game == "show") {
-			cout << "\nIndex - Game\n";
-			cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-			for (int i = 0; i < videoGames.size();i++) {
-				cout << i << "     - " << videoGames[i] << endl;
-			}
+		else if (command == "show") {
+			toShow();
 		}
-		else if (game == "remove") {
+		else if (command == "remove") {
 			cout << "\nWhat do you like to remove? (Enter the index number): ";
 			cin >> index;
-			cout << "Removed " << videoGames.at(index) << ".\n";
-			videoGames.erase(videoGames.begin() + index);
+			toRemove(index);
 		}
-		else if (game == "end") {
+		else if (command == "end") {
 			cout << "\nThank you for using this program.\n";
 			program = true;
 		}
@@ -90,4 +71,39 @@ int main()
 	} while (!program);
 
 	return 0;
+}
+
+vector<string> toAdd() {
+	string game;
+	vector<string> list = videoGames;
+	bool addingGame = false;
+	cout << "\nWhat game(s) do you like to add?\n";
+	while (!addingGame) {
+		cin >> game;
+		if (game == "stop") {
+			addingGame = true;
+		}
+		else {
+			list.push_back(game);
+		}
+	}
+	return list;
+}
+
+void toShow() {
+	cout << "\nIndex - Game\n";
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+	for (int i = 0; i < videoGames.size(); i++) {
+		cout << i << "     - " << videoGames[i] << endl;
+	}
+}
+
+void toRemove(int ind) {
+	if (ind < videoGames.size()) {
+		cout << "Removed " << videoGames.at(ind) << ".\n";
+		videoGames.erase(videoGames.begin() + ind);
+	}
+	else {
+		cout << "Index number is beyond the boundary." << endl;
+	}
 }
