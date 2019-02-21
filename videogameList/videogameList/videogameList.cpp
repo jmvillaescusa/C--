@@ -49,7 +49,7 @@ int main()
 	cout << "\n\t\t***** PLEASE REPLACE EVERY ' ' WITH '-'. *****" << endl;
 
 	do {
-		cout << "\nWhat do you like to do?\n";
+		cout << "\nWhat do you like to do? ";
 		cin >> command;
 
 		if (command == "add") {
