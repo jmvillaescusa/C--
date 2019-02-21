@@ -73,8 +73,13 @@ int main()
 		else if (game == "remove") {
 			cout << "\nWhat do you like to remove? (Enter the index number): ";
 			cin >> index;
-			cout << "Removed " << videoGames.at(index) << ".\n";
-			videoGames.erase(videoGames.begin() + index);
+			if (index < videoGames.size()) {
+				cout << "Removed " << videoGames.at(index) << ".\n";
+				videoGames.erase(videoGames.begin() + index);
+			}
+			else {
+				cout << "Index number is beyond the boundary." << endl;
+			}
 		}
 		else if (game == "end") {
 			cout << "\nThank you for using this program.\n";

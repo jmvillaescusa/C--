@@ -46,7 +46,7 @@ int main()
 	cout << "If you want to stop adding, simply type 'stop'.\n";
 	cout << "Type 'remove', then the index number indicated to remove a game.\n";
 	cout << "Type 'end' to finish the program.\n";
-	cout << "\n\t\t ***** PLEASE REPLACE EVERY ' ' WITH '-'. *****" << endl;
+	cout << "\n\t\t***** PLEASE REPLACE EVERY ' ' WITH '-'. *****" << endl;
 
 	do {
 		cout << "\nWhat do you like to do?\n";
