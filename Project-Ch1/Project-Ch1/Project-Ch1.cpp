@@ -69,7 +69,7 @@ int main()
 
 	// 3. Average
 	/*
-float score1;
+	float score1;
 	float score2;
 	float score3;
 	std::cout << "Enter first score: ";
@@ -86,7 +86,7 @@ float score1;
 	// 4. Dealing cards
 	/*const int DECK = 52;
 	int players;
-	std::cout << "How many players are playing? ";
+	std::cout << "How many players are present? ";
 	std::cin >> players;
 
 	int dealt = DECK / players;
