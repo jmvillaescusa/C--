@@ -42,7 +42,7 @@ int main()
 	cout << "Type 'end' to finish the program.\n";
 
 	do {
-		cout << "\nWhat do you like to do?\n";
+		cout << "\nWhat do you like to do? ";
 		cin >> game;
 
 		if (game == "add") {

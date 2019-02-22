@@ -1,0 +1,21 @@
+Questions
+1. Planning for the program allows the programmers to save time and, sometimes, money. Without one,    you and your team will struggle through the process and waste both time and money.
+
+2. Utilizing comments in your program allows the reader to understand what is happening in the    code.
+
+3. - Easy to read
+   - Short, but descriptive
+   - Consistent
+
+4. Int - score
+       - lives
+       - number of enemies
+       - choice selection
+   Char - 
+   Double - health
+          - timer
+   Bool - program switch (on/off)
+        - is the player alive
+        - button presses
+
+5. It's value will never change and programming makes it easier to understand (like point values)
