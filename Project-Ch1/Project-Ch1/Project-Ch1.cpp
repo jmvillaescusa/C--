@@ -29,7 +29,7 @@ int main()
 	//Projects
 
 	// 1. Game Menu
-	/*std::cout << "\tGame Menu" << std::endl;
+	std::cout << "\tGame Menu" << std::endl;
 	std::cout << "1. One player" << std::endl;
 	std::cout << "2. Two players" << std::endl;
 	std::cout << "3. Quit" << std::endl;
@@ -50,10 +50,11 @@ int main()
 	else {
 		std::cout << "Invalid Choice" << std::endl;
 	}
-	*/
+	std::cout << "======================================" << std::endl;
+	
 
 	// 2. Bonus Points
-	/*const int CIVILIAN = 100;
+	const int CIVILIAN = 100;
 	const int ENEMY = 50;
 
 	int num1;
@@ -65,10 +66,9 @@ int main()
 
 	std::cout << "\nYou've saved " << num1 << " civilians and destroyed " << num2 << " aliens.\n";
 	std::cout << "Bonus points: " << (num1 * CIVILIAN) + (num2 * ENEMY) << std::endl;
-	*/
+	std::cout << "======================================" << std::endl;
 
 	// 3. Average
-	/*
 	float score1;
 	float score2;
 	float score3;
@@ -79,12 +79,12 @@ int main()
 	std::cout << "Enter third score: ";
 	std::cin >> score3;
 
-	float average = (score1 + score2 + score3) / 3.0;
-	std::cout << "\nAverage score: " << average;
-	*/
+	double average = (score1 + score2 + score3) / 3.0;
+	std::cout << "\nAverage score: " << average << std::endl;
+	std::cout << "======================================" << std::endl;
 
 	// 4. Dealing cards
-	/*const int DECK = 52;
+	const int DECK = 52;
 	int players;
 	std::cout << "How many players are present? ";
 	std::cin >> players;
@@ -92,8 +92,9 @@ int main()
 	int dealt = DECK / players;
 	int cardsLeft = DECK % players;
 	std::cout << "\nCards dealt per person: " << dealt << std::endl;
-	std::cout << "Cards leftover: " << cardsLeft << std::endl;*/
-	
+	std::cout << "Cards leftover: " << cardsLeft << std::endl;
+	std::cout << "======================================" << std::endl;
+
 	// 5. Personalized story
 	std::string lastName;
 	int spells;
@@ -117,6 +118,7 @@ int main()
 	std::cout << "Apprentice Wizard " << lastName << " hesitantly approached The Temple for the final test." << std::endl;
 	std::cout << "The Apprentice had studied " << spells << " spells for " << hours << " hours each, toiling for a total of " << hoursSpent << " hours." << std::endl;
 	std::cout << lastName << " only hoped that The Masters would ask for The Apprentice's favorite incarnation, The Summoning of the " << summon << "..." << std::endl;
-
+	std::cout << "======================================" << std::endl;
+	
 	return 0;
 }
