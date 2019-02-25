@@ -38,16 +38,17 @@ int main()
 	std::cout << "\nEnter Choice: ";
 	std::cin >> choice;
 
-	if (choice == 1) {
+	switch (choice) {
+	case 1:
 		std::cout << "You chose one player" << std::endl;
-	}
-	else if (choice == 2) {
+		break;
+	case 2:
 		std::cout << "You chose two players" << std::endl;
-	}
-	else if (choice == 3) {
+		break;
+	case 3:
 		std::cout << "You exited the menu" << std::endl;
-	}
-	else {
+		break;
+	default:
 		std::cout << "Invalid Choice" << std::endl;
 	}
 	std::cout << "======================================\n" << std::endl;
