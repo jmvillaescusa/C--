@@ -50,7 +50,7 @@ int main()
 	else {
 		std::cout << "Invalid Choice" << std::endl;
 	}
-	std::cout << "======================================" << std::endl;
+	std::cout << "======================================\n" << std::endl;
 	
 
 	// 2. Bonus Points
@@ -66,7 +66,7 @@ int main()
 
 	std::cout << "\nYou've saved " << num1 << " civilians and destroyed " << num2 << " aliens.\n";
 	std::cout << "Bonus points: " << (num1 * CIVILIAN) + (num2 * ENEMY) << std::endl;
-	std::cout << "======================================" << std::endl;
+	std::cout << "======================================\n" << std::endl;
 
 	// 3. Average
 	float score1;
@@ -81,7 +81,7 @@ int main()
 
 	double average = (score1 + score2 + score3) / 3.0;
 	std::cout << "\nAverage score: " << average << std::endl;
-	std::cout << "======================================" << std::endl;
+	std::cout << "======================================\n" << std::endl;
 
 	// 4. Dealing cards
 	const int DECK = 52;
@@ -93,7 +93,7 @@ int main()
 	int cardsLeft = DECK % players;
 	std::cout << "\nCards dealt per person: " << dealt << std::endl;
 	std::cout << "Cards leftover: " << cardsLeft << std::endl;
-	std::cout << "======================================" << std::endl;
+	std::cout << "======================================\n" << std::endl;
 
 	// 5. Personalized story
 	std::string lastName;
