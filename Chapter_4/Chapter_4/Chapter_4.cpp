@@ -67,7 +67,15 @@ int main()
 			cout << "\nIndex - Game\n";
 			cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 			for (int i = 0; i < videoGames.size();i++) {
-				cout << i << "     - " << videoGames[i] << endl;
+				if (i > 99) {
+					cout << i << "   - " << videoGames[i] << endl;
+				}
+				else if (i > 9) {
+					cout << i << "    - " << videoGames[i] << endl;
+				}
+				else {
+					cout << i << "     - " << videoGames[i] << endl;
+				}
 			}
 		}
 		else if (game == "remove") {
@@ -78,7 +86,7 @@ int main()
 				videoGames.erase(videoGames.begin() + index);
 			}
 			else {
-				cout << "Index number is beyond the boundary." << endl;
+				cout << "Invalid index number." << endl;
 			}
 		}
 		else if (game == "end") {
