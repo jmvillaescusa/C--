@@ -1,6 +1,14 @@
 /*
 	Questions
-	1.
+	1. Encapsulation helps saparate codes by keeping the details hidden, and only exchanges the return value needed
+
+	2.
+
+	3.
+
+	4.
+
+	5.
 */
 #include <iostream>
 #include <string>
@@ -11,7 +19,8 @@
 #include "Chapter_5.h"
 using namespace std;
 
-
+char toGuess(string &used);
+void check(const string &THE_WORD, string &soFar, char &letter, int &wrong);
 
 int main()
 {
@@ -37,37 +46,15 @@ int main()
 	string soFar = string(THE_WORD.size(), '-');
 	string used = "";
 
-	cout << "Welcome to Hangman. Good luck!\n";
+	cout << "Welcome to Hangman. Good luck!";
 
 	while ((wrong < MAX_WRONG) && (soFar != THE_WORD)) {
 		cout << "\n\nYou have " << (MAX_WRONG - wrong) << " incorrect guesses left.\n";;
 		cout << "\nYou've used the following letters:\n" << used << endl;
 		cout << "\nSo far, the word is:\n" << soFar << endl;
 
-		char guess;
-		cout << "Enter your guess: ";
-		cin >> guess;
-		guess = toupper(guess);
-		while (used.find(guess) != string::npos) {
-			cout << "You've already guessed " << guess << endl;
-			cout << "Enter your guess: ";
-			cin >> guess;
-			guess = toupper(guess);
-		}
-		used += guess;
-		if (THE_WORD.find(guess) != string::npos) {
-			cout << "That's right!" << guess << "is in the word.\n";
-
-			for (int i = 0; i < THE_WORD.length(); i++) {
-				if (THE_WORD[i] == guess) {
-					soFar[i] = guess;
-				}
-			}
-		}
-		else {
-			cout << "Sorry, " << guess << " isn't in the word.\n";
-			++wrong;
-		}
+		char letter = toGuess(used);
+		check(THE_WORD, soFar, letter, wrong);
 	}
 
 	if (wrong == MAX_WRONG) {
@@ -80,4 +67,34 @@ int main()
 	cout << "\nThe word was " << THE_WORD << endl;
 
 	return 0;
+}
+
+char toGuess(string &used) {
+	char guess;
+	cout << "Enter your guess: ";
+	cin >> guess;
+	guess = toupper(guess);
+	while (used.find(guess) != string::npos) {
+		cout << "You've already guessed " << guess << endl;
+		cout << "Enter your guess: ";
+		cin >> guess;
+		guess = toupper(guess);
+	}
+	used += guess;
+	return guess;
+}
+void check(const string &THE_WORD,string &soFar, char &letter, int &wrong) {
+	if (THE_WORD.find(letter) != string::npos) {
+		cout << "That's right! " << letter << " is in the word.\n";
+
+		for (int i = 0; i < THE_WORD.length(); i++) {
+			if (THE_WORD[i] == letter) {
+				soFar[i] = letter;
+			}
+		}
+	}
+	else {
+		cout << "Sorry, " << letter << " isn't in the word.\n";
+		++wrong;
+	}
 }
