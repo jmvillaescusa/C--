@@ -82,7 +82,7 @@ int main()
 	cout << "You've entered: " << getInput(number) << endl;
 	string text;
 	cout << "Enter a text: ";
-	cin >> text;
+NEON TEXT	cin >> text;
 	cout << "You've entered: " << getInput(text) << endl;
 
 	return 0;

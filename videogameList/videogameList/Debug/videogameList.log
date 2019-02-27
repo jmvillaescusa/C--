@@ -1,4 +1,4 @@
 ﻿  videogameList.cpp
 c:\_projects\gamedev\c--\videogamelist\videogamelist\videogamelist.cpp(96): warning C4018: '<': signed/unsigned mismatch
-c:\_projects\gamedev\c--\videogamelist\videogamelist\videogamelist.cpp(102): warning C4018: '<': signed/unsigned mismatch
+c:\_projects\gamedev\c--\videogamelist\videogamelist\videogamelist.cpp(101): warning C4018: '<': signed/unsigned mismatch
   videogameList.vcxproj -> C:\_Projects\GameDev\C--\videogameList\Debug\videogameList.exe
