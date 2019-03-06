@@ -132,19 +132,15 @@ int main() {
 	std::cout << "\tWelcome to a game of Nim\n\n";
 	std::cout << "Take turns picking up sticks!\n";
 	std::cout << "The objective is to be the one that picks up the last stick\n";
-	std::cout << "But you can only pick 1 - 4 stick up per turn\n\n";
+	std::cout << "But you can only pick 1 - 4 stick up per turn\n";
 
 	do {
-		std::cout <<"There are "<< sticks << " left."<< std::endl;
+		std::cout << "\nThere are " << sticks << " left."<< std::endl;
 
 		if (playerTurn) {
 			std::cout << "Player 1, how many would you like to take? ";
 			std::cin >> input;
-			std::cout << std::endl;
-			if (input <= 0) {
-				std::cout << "Invalid input\n\n";
-			}
-			else if (input > 4) {
+			if (input <= 0 || input > 4) {
 				std::cout << "Invalid input\n\n";
 			}
 			else {
@@ -160,11 +156,7 @@ int main() {
 		else {
 			std::cout << "Player 2, how many would you like to take? ";
 			std::cin >> input;
-			std::cout << std::endl;
-			if (input <= 0) {
-				std::cout << "Invalid input\n\n";
-			}
-			else if (input > 4) {
+			if (input <= 0 || input > 4) {
 				std::cout << "Invalid input\n\n";
 			}
 			else {
@@ -177,14 +169,13 @@ int main() {
 				}
 			}
 		}
-
 	} while (sticks > 0);
 
 	if (playerTurn) {
-		std::cout << "Player 1 Wins!\n";
+		std::cout << "\nPlayer 1 Wins!\n";
 	}
 	else {
-		std::cout << "Player 2 Wins!\n";
+		std::cout << "\nPlayer 2 Wins!\n";
 	}
 
 	return 0;
