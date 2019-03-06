@@ -26,7 +26,7 @@ int main()
 {
 	// Exercises
     // 1. Menu Chooser
-	std::cout << "Difficulty Levels\n\n";
+	/*std::cout << "Difficulty Levels\n\n";
 	std::cout << "1 - Easy\n";
 	std::cout << "2 - Normal\n";
 	std::cout << "3 - Hard\n\n";
@@ -52,7 +52,7 @@ int main()
 		break;
 	default:
 		std::cout << "You made an illegal choice.\n";
-	}
+	}*/
 
 	/*
 	2. - while(x) is a infinite loop

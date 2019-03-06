@@ -94,27 +94,27 @@ int main()
 			program = true;
 		}
 
-		/*
-			2. They forgot to code the increment to each score
-			   What is currently doing is just going through the vector with iter,
-			   but not changing any score
-		*/
-
-		/*
-			3. Create a list of words to shuffle with hints attached to them
-			   Tell the program to pick a random word
-			   Shuffle the letters of that word
-			   Start the game loop
-		           Introduce the player the game, and reveal the shuffuled word
-				   Ask the player to either unshuffle the word or give them the hint when prompted
-				   If they get it right
-				       Congratulate the player, and end the loop
-				   Otherwise
-				       Tell to keep trying, until they get it right
-			   End the program
-		*/
-
 	} while (!program);
+
+	/*
+	2. They forgot to code the increment to each score
+	   What is currently doing is just going through the vector with iter,
+	   but not changing any score
+	*/
+
+	/*
+	3. Create a list of words to shuffle with hints attached to them
+	   Tell the program to pick a random word
+	   Shuffle the letters of that word
+	   Start the game loop
+		   Introduce the player the game, and reveal the shuffuled word
+		   Ask the player to either unshuffle the word or give them the hint when prompted
+		   If they get it right
+			   Congratulate the player, and end the loop
+		   Otherwise
+			   Tell to keep trying, until they get it right
+	   End the program
+	*/
 
 	return 0;
 }

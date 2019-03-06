@@ -3,14 +3,18 @@ Questions
 1. Branches help the programmer create different results depending on the player's input
    In some games, depending on the players actions, can trigger a certain ending
 
-2. Reccomended less than 4 nested blocks
+2. It is recommended to try to do the least amount of nesting to avoid making the coding complicated
 
 3. Flowcharts are diagram showing the logical flow of steps in a prosses;
    It's a good way to visually see code, instead of using pseudocode
 
-4. If your game has an over abundance of RNG, that game may not be fun
+4. Random number generator (RNG for short) can add an element of suprise to gamers, making it a more engaging experience
+   But if your game has an over abundance of RNG, that game may not be fun
 
-5. Binary Search algorithm (I do not undetstand this question...)_
+5. Use the the average of the minimum and maximum values
+   If the number is greater than the average, maximum becomes average minus 1
+   Otherwise, if number is lesser than the average, minimum becomes average plus 1
+   Repeat the process until the average is the number
 */
 #include <iostream>
 #include <cstdlib>
