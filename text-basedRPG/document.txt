@@ -1,12 +1,38 @@
 ========================================================================
-Premise
+Premise & Objective
 ========================================================================
+You are locked inside a small keep, unarmed, surrounded by guards and their dogs! There is a door on the otherside of the keep, presumably the exit of this place. But it's locked, so a key must be with one of the guards.
 
+Your objective is to navigate, fight and find a way out of this place. Encounters of enemies will be random as you move through the keep. Fighting is turn-based, who ever has the higher speed will go first. Use the armor and the sword to better your chances of escaping. The game will end if you either escape the keep, or you're slain in battle.
 
 ========================================================================
 Characters & Stats
 ========================================================================
+Player:
+ - Name will be inputed by user
+ - Will have an inventory (limit of 4 items)
+ - Stats:
+   - Vitality | 25
+   - Strength | 10, 20 with sword
+   - Defence  | 5, 7 with armor
+   - Speed    | 30
+   - Luck     | 5, 15 with sword and armor
 
+Guard:
+ - Might possess the key to the door (random chance)
+ - Might possess a potion for healing (random chance)
+ - Stats:
+   - Vitality | 20 
+   - Strength | 7, 12 if player possess sword
+   - Defence  | 3, 5 if player possess armor
+   - Speed    | 15
+
+Guard dog:
+ - They possess no items
+ - Stats:
+   - Vitality | 12
+   - Strength | 5
+   - Speed    | 40
 
 ========================================================================
 Map
@@ -17,16 +43,41 @@ Map
 #.........####...........#      #........#     '.' - Empty space
 #................####.....#   ##.........#     'D' - Locked door
  #..............#    #.....#  #..........###   'A' - Armor
-  #.....##......#    #......##.............D   ' ' - Nothing
-  #....#  #......####....................###
-  #....#  #....................###......#
- #......##................#####   #.....#
- #................########         #...#
- #..............##                 #...##### 
-  ##...........#                   #........#
-    #.........#                    #.......A#
-     #########                      ########
+  #.....##......#    #......##.............D   'S' - Sword
+  #....#  #......####....................###   ' ' - Nothing
+  #....#   #....................###......#
+ #......#   #..............#####   #....#
+ #......#  #........######         #...#
+ #.......##........#               #...##### 
+  ##................#              #........#
+   #...........##....##############........A#
+   #..S########  #.....................#####
+    ###           #####################
 
 ========================================================================
-Inventory
+Items
 ========================================================================
+Sword  - increases strength, must be adjacent in order to pick up
+Armor  - increases vitality, must be adjacent in order to pick up
+Key    - in possession of the guards, there is only one, and must be in posession in order to escape
+Potion - regenerates vitality, in possession of the guards, can be obtained if the players defeats a guard and still has space for their inventory
+
+========================================================================
+User Commands
+========================================================================
+The user must enter these below to make an action
+'w' - move up
+'a' - move left
+'s' - move down
+'d' - move right
+'i' - view inventory
+'p' - pick up an item, if the player is not near any item, the game will tell them there is nothing to pick up
+'r' - remove an item, the game will ask them to which item to remove, and will remove that item according to it's index number
+'h' - view commands
+
+In a fight
+'1' - Attack, will decrease vitality
+'2' - Defend, will add its value to vitality
+'3' - Use potion, rengerates vitality
+'4' - Escape, has a chance to fail and lose a turn
+Enemies can only attack and defend
