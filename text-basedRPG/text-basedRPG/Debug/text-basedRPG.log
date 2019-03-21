@@ -1,0 +1,5 @@
+﻿  map.cpp
+  text-basedRPG.cpp
+  Generating Code...
+c:\_projects\gamedev\c--\text-basedrpg\text-basedrpg\map.cpp(30): warning C4715: 'Map::MapIndex': not all control paths return a value
+  text-basedRPG.vcxproj -> C:\_Projects\GameDev\C--\text-basedRPG\Debug\text-basedRPG.exe

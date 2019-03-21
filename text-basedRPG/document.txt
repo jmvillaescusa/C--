@@ -37,17 +37,17 @@ Guard dog:
 ========================================================================
 Map
 ========================================================================
-  ######              #############            Legend:
+  ######              #############          Legend:
  #......#         ####.............##          '#' - Wall
 #..@.....#    ####........######.....####      '@' - Player
 #.........####...........#      #........#     '.' - Empty space
 #................####.....#   ##.........#     'D' - Locked door
- #..............#    #.....#  #..........###   'A' - Armor
+ #..............#    #.....#  #..........####  'A' - Armor
   #.....##......#    #......##.............D   'S' - Sword
-  #....#  #......####....................###   ' ' - Nothing
+  #....#  #......####....................####  ' ' - Nothing
   #....#   #....................###......#
- #......#   #..............#####   #....#
- #......#  #........######         #...#
+ #......#   #..............#####   #....#      x = 45
+ #......#  #........######         #...#       y = 16
  #.......##........#               #...##### 
   ##................#              #........#
    #...........##....##############........A#
@@ -70,8 +70,9 @@ The user must enter these below to make an action
 'a' - move left
 's' - move down
 'd' - move right
-'i' - view inventory
 'p' - pick up an item, if the player is not near any item, the game will tell them there is nothing to pick up
+'i' - view inventory
+'u' - use a potion to regenerate vitality; if theres none, the game will tell the player they don't have any, otherwise, that potion will be discarded
 'r' - remove an item, the game will ask them to which item to remove, and will remove that item according to it's index number
 'h' - view commands
 
