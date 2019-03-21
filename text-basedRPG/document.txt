@@ -72,13 +72,13 @@ The user must enter these below to make an action
 'd' - move right
 'p' - pick up an item, if the player is not near any item, the game will tell them there is nothing to pick up
 'i' - view inventory
-'u' - use a potion to regenerate vitality; if theres none, the game will tell the player they don't have any, otherwise, that potion will be discarded
+'u' - use a potion to regenerate vitality; if theres none, the game will tell them they don't have any, otherwise, that potion will be discarded
 'r' - remove an item, the game will ask them to which item to remove, and will remove that item according to it's index number
 'h' - view commands
 
 In a fight
-'1' - Attack, will decrease vitality
-'2' - Defend, will add its value to vitality
-'3' - Use potion, rengerates vitality
+'1' - Attack, vitality - strength
+'2' - Defend, vitality + defence - strength
+'3' - Use potion, rengerates vitality (vitality += 10)
 '4' - Escape, has a chance to fail and lose a turn
 Enemies can only attack and defend
