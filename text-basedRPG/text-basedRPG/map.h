@@ -6,7 +6,7 @@
 class Map {
 public:
 	const char WALL = '#';    // 1
-	const char PLAYER = '@';  // 3
+	const char AVATAR = '@';  // 3
 	const char SPACE = '.';   // 2
 	const char NOTHING = ' '; // 0
 	const char SWORD = 'S';   // 6

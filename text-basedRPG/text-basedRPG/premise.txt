@@ -1,0 +1,18 @@
+Welcome to my Text-based RPG!
+========================================================================
+========================================================================
+Premise & Objective
+
+You are locked inside a small keep, unarmed, surrounded by guards and their dogs!
+There is a door on the otherside of the keep, presumably the exit of this place.
+But it's locked, so a key must be with one of the guards.
+
+Your objective is to navigate, fight and find a way out of this place.
+Encounters of enemies will be random as you move through the keep.
+Fighting is turn-based, who ever has the higher speed will go first.
+Use the armor and the sword to better your chances of escaping.
+The game will end if you either escape the keep, or you're slain in battle.
+
+To start off, what is your name? (enter your name then press ENTER to continue)
+
+	Name: 

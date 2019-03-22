@@ -6,6 +6,7 @@
 
 class Player : public BaseStats {
 public:
+	bool isRunning = true;
 	Player();
 	~Player();
 
@@ -20,15 +21,20 @@ public:
 	void MoveLeft();
 	void MoveDown();
 	void MoveRight();
+	void CheckStats();
 	void PickUp();
 	void ViewInventory();
-	void Usepotion(char temp);
 	void RemoveItem();
 	void Help();
+	void getCommand();
+
+	void ClearScreen();
 
 private:
 	int luck;
 	std::string name;
+	int posX;
+	int posY;
 
 public:
 	//Getter

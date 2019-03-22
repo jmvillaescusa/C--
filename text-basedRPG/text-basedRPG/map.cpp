@@ -1,6 +1,8 @@
 #include "map.h"
 
 void Map::Display() {
+	std::cout << std::endl << "========================================================================\n";
+	std::cout << "========================================================================\n";
 	char temp;
 	for (int i = 0; i < 16; i++) {
 		for (int j = 0; j < 45; j++) {
@@ -19,7 +21,7 @@ char Map::MapIndex(int temp) {
 	case 2:
 		return SPACE;
 	case 3:
-		return PLAYER;
+		return AVATAR;
 	case 4:
 		return DOOR;
 	case 5:
