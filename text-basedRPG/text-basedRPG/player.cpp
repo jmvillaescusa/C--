@@ -153,7 +153,7 @@ void Player::getCommand() {
 	else if (c == 'h') { Help();  }
 	else if (c == 'q') { 
 		isRunning = false; 
-		std::cout << std::endl << "Thanks for playng my game!\n";
+		std::cout << std::endl << "Thanks for playng!\n";
 	}
 	else { std::cout << "Invalid Input "; }
 }
