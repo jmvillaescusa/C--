@@ -19,7 +19,7 @@ public:
 
 	//Setters
 	void setVitality(int v) { vitality = v; }
-	void setStength(int st) { strength = st; }
+	void setStrength(int st) { strength = st; }
 	void setDefence(int d) { defence = d; }
 	void setSpeed(int sp) { speed = sp; }
 

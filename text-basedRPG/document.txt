@@ -5,7 +5,7 @@ Player:
  - Name will be inputed by user
  - Will have an inventory (limit of 4 items)
  - Stats:
-   - Vitality | 25
+   - Vitality | 25, 40 with sword and armor
    - Strength | 10, 20 with sword
    - Defence  | 5, 7 with armor
    - Speed    | 30
@@ -15,7 +15,7 @@ Guard:
  - Might possess the key to the door (random chance)
  - Might possess a potion for healing (random chance)
  - Stats:
-   - Vitality | 20 
+   - Vitality | 20, 35 if player possess sword and armor
    - Strength | 7, 12 if player possess sword
    - Defence  | 3, 5 if player possess armor
    - Speed    | 15

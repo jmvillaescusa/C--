@@ -13,6 +13,7 @@ Fighting is turn-based, who ever has the higher speed will go first.
 Use the armor and the sword to better your chances of escaping.
 The game will end if you either escape the keep, or you're slain in battle.
 
+If this is your first time playing, please ENTER 'h' for a list of cammands.
 To start off, what is your name? (enter your name then press ENTER to continue)
 
 	Name: 

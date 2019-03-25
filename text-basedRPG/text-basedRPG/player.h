@@ -31,10 +31,17 @@ public:
 	void ClearScreen();
 
 private:
-	int luck;
 	std::string name;
 	int posX;
 	int posY;
+	int luck;
+
+	int swordPosX;
+	int swordPosY;
+	int armorPosX;
+	int armorPosY;
+
+	const int MAX_ITEMS = 4;
 
 public:
 	//Getter
@@ -45,7 +52,7 @@ public:
 	void setLuck(int l) { luck = l; }
 	void setName(std::string n) { name = n; }
 
-	std::string inventory[4] = {};
+	std::string inventory[4] = {" "};
 };
 #endif // !PLAYER
 

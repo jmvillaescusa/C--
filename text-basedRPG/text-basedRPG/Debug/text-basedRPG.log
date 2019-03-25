@@ -1,7 +1,2 @@
-﻿  pch.cpp
-  map.cpp
-  player.cpp
-  text-basedRPG.cpp
-  Generating Code...
-c:\users\jaimeson\documents\github\c--\text-basedrpg\text-basedrpg\map.cpp(32): warning C4715: 'Map::MapIndex': not all control paths return a value
-  text-basedRPG.vcxproj -> C:\Users\Jaimeson\Documents\GitHub\C--\text-basedRPG\Debug\text-basedRPG.exe
+﻿  player.cpp
+  text-basedRPG.vcxproj -> C:\_Projects\GameDev\C--\text-basedRPG\Debug\text-basedRPG.exe
