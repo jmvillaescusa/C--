@@ -12,8 +12,8 @@ Player:
    - Luck     | 5, 15 with sword and armor
 
 Guard:
- - Might possess the key to the door (random chance)
- - Might possess a potion for healing (random chance)
+ - Might possess the key to the door (random chance based on luck)
+ - Might possess a potion for healing (random chance based on luck)
  - Stats:
    - Vitality | 20, 35 if player possess sword and armor
    - Strength | 7, 12 if player possess sword

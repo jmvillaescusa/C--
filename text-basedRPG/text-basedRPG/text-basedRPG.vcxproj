@@ -151,12 +151,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="guard.h" />
+    <ClInclude Include="guardDog.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="baseStats.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="guard.cpp" />
+    <ClCompile Include="guardDog.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

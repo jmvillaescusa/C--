@@ -2,8 +2,6 @@
 #define PLAYER
 
 #include "baseStats.h"
-#include <string>
-
 
 class Player : public BaseStats {
 public:
@@ -29,7 +27,7 @@ public:
 	void Help();
 	void getCommand();
 
-	int VitalityBonus();
+	int StatBonus();
 
 	void ClearScreen();
 
@@ -41,8 +39,11 @@ private:
 
 	int swordPosX;
 	int swordPosY;
+	std::string sword = "sword";
+
 	int armorPosX;
 	int armorPosY;
+	std::string armor = "armor";
 
 	const int MAX_ITEMS = 4;
 
@@ -50,6 +51,9 @@ public:
 	//Getter
 	int getLuck() { return luck; }
 	std::string getName() { return name; }
+
+	std::string getSword() { setStrength(20); return sword; }
+	std::string getArmor() { setDefence(7); return armor;  }
 
 	//Setter
 	void setLuck(int l) { luck = l; }

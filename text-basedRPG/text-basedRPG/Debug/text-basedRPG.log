@@ -1,6 +1,6 @@
 ﻿  player.cpp
-c:\users\jaimeson\documents\github\c--\text-basedrpg\text-basedrpg\player.cpp(262): warning C4018: '<': signed/unsigned mismatch
-c:\users\jaimeson\documents\github\c--\text-basedrpg\text-basedrpg\player.cpp(264): warning C4018: '<': signed/unsigned mismatch
-c:\users\jaimeson\documents\github\c--\text-basedrpg\text-basedrpg\player.cpp(272): warning C4018: '<': signed/unsigned mismatch
-c:\users\jaimeson\documents\github\c--\text-basedrpg\text-basedrpg\player.cpp(285): warning C4715: 'Player::VitalityBonus': not all control paths return a value
-  text-basedRPG.vcxproj -> C:\Users\Jaimeson\Documents\GitHub\C--\text-basedRPG\Debug\text-basedRPG.exe
+c:\_projects\gamedev\c--\text-basedrpg\text-basedrpg\player.cpp(278): warning C4018: '<': signed/unsigned mismatch
+  text-basedRPG.cpp
+  Generating Code...
+c:\_projects\gamedev\c--\text-basedrpg\text-basedrpg\player.cpp(292): warning C4715: 'Player::StatBonus': not all control paths return a value
+  text-basedRPG.vcxproj -> C:\_Projects\GameDev\C--\text-basedRPG\Debug\text-basedRPG.exe

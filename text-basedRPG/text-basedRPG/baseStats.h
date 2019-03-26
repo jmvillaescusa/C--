@@ -2,6 +2,7 @@
 #define BASESTATS
 
 #include <iostream>
+#include <string>
 
 class BaseStats {
 protected:
