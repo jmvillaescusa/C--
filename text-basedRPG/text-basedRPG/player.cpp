@@ -141,36 +141,38 @@ void Player::CheckStats() {
 
 //Inventory Management
 std::string *p_Item = 0;
-int numItems = 0;
+int itemRef = 0;
+int itemCount = 0;
 void Player::PickUp() { 
 	//Picks up a sword
-	if (m.world[posY + 1][posX] == 6 || m.world[posY][posX + 1] == 6) {
-		if (m.world[posY + 1][posX] == 6) {
-			m.world[posY + 1][posX] = 2;
+	if (m.world[posY + 1][posX] == 6 || m.world[posY][posX + 1] == 6 || m.world[posY - 1][posX] == 6 || m.world[posY][posX - 1] == 6 || posX == swordPosX && posY == swordPosY) {
+		if (posX == swordPosX && posY == swordPosY) {
+			m.world[posY][posX] = 2;
 		}
-		else if (m.world[posY - 1][posX] == 6) {
+		else if (m.world[posY - 1][posX] == m.world[swordPosY][swordPosX]) {
 			m.world[posY - 1][posX] = 2;
 		}
-		else if (m.world[posY][posX + 1] == 6) {
+		else if (m.world[posY][posX + 1] == m.world[swordPosY][swordPosX]) {
 			m.world[posY][posX + 1] = 2;
 		}
-		else if (m.world[posY][posX - 1] == 6) {
+		else if (m.world[posY][posX - 1] == m.world[swordPosY][swordPosX]) {
 			m.world[posY][posX - 1] = 2;
 		}
-		else if (m.world[posY][posX] == m.world[swordPosY][swordPosX]) {
-			m.world[posY][posX - 1] = 2;
+		else if (m.world[posY + 1][posX] == m.world[swordPosY][swordPosX]) {
+			m.world[posY + 1][posX] = 2;
 		}
 		swordPosX = -1;
 		swordPosY = -1;
-		inventory[numItems++] = "sword";
+		inventory[itemRef++] = "sword";
 		ClearScreen();
 		std::cout << std::endl << name << " has picked up a sword. " << name << "'s strength has increased.";
 		setStrength(20);
+		++itemCount;
 	}
 	//Picks up armor
-	else if (m.world[posY + 1][posX] == 5 || m.world[posY][posX + 1] == 5) { 
-		if (m.world[posY + 1][posX] == 5) {
-			m.world[posY + 1][posX] = 2;
+	else if (m.world[posY + 1][posX] == 5 || m.world[posY][posX + 1] == 5 || m.world[posY - 1][posX] == 5 || m.world[posY][posX - 1] == 5 || posX == armorPosX && posY == armorPosY) {
+		if (m.world[posY][posX] == m.world[armorPosY][armorPosX]) {
+			m.world[posY][posX] = 2;
 		}
 		else if (m.world[posY - 1][posX] == 5) {
 			m.world[posY - 1][posX] = 2;
@@ -181,20 +183,22 @@ void Player::PickUp() {
 		else if (m.world[posY][posX - 1] == 5) {
 			m.world[posY][posX - 1] = 2;
 		}
-		else if (m.world[posY][posX] == m.world[armorPosY][armorPosX]) {
-			m.world[posY][posX - 1] = 2;
+		else if (posX == armorPosX && posY == armorPosY) {
+			m.world[posY + 1][posX] = 2;
 		}
 		armorPosX = -1;
 		armorPosY = -1;
-		inventory[numItems++] = "armor";
+		inventory[itemRef++] = "armor";
 		ClearScreen();
 		std::cout << std::endl << name << " has picked up some armor. " << name << "'s defence has increased.";
 		setDefence(7);
+		++itemCount;
 	}
 	else {
 		ClearScreen();
-		std::cout << "There is nothing to pick up.\n";
+		std::cout << "\nThere is nothing to pick up.";
 	}
+	VitalityBonus();
 };
 void Player::ViewInventory() {
 	ClearScreen();
@@ -206,7 +210,7 @@ void Player::ViewInventory() {
 };
 void Player::RemoveItem() { 
 	ClearScreen();
-	if (inventory[0] == " "){
+	if (itemCount == 0) {
 		std::cout << "\nThere is nothing to remove.";
 	}
 	else {
@@ -216,23 +220,69 @@ void Player::RemoveItem() {
 		std::cin >> itemIndex;
 		ClearScreen();
 		p_Item = &inventory[itemIndex];
-		std::cout << "\nRemoved " << *p_Item << ". ";
+
 		if (*p_Item == "sword") {
-			std::cout << name << "'s strength decreased.";
-			setStrength(10);
-			swordPosX = posX;
-			swordPosY = posY;
+			if (posX == armorPosX && posY == armorPosY) {
+				std::cout << "\nThere seems to be something on the floor already";
+			}
+			else {
+				std::cout << "\nRemoved " << *p_Item << ". " << name << "'s strength decreased.";
+				setStrength(10);
+				swordPosX = posX;
+				swordPosY = posY;
+				*p_Item = "";
+				itemRef = itemIndex;
+				--itemCount;
+			}
 		}
 		else if (*p_Item == "armor") {
-			std::cout << name << "'s defence decreased.";
-			setDefence(5);
-			armorPosX = posX;
-			armorPosY = posY;
+			if (posX == swordPosX && posY == swordPosY) {
+				std::cout << "\nThere seems to be something on the floor already";
+			}
+			else {
+				std::cout << "\nRemoved " << *p_Item << ". " << name << "'s defence decreased.";
+				setDefence(5);
+				armorPosX = posX;
+				armorPosY = posY;
+				*p_Item = "";
+				itemRef = itemIndex;
+				--itemCount;
+			}
 		}
-		*p_Item = " ";
-		numItems -= 1;
+		else {
+			std::cout << "\nRemoved " << *p_Item << ". ";
+			*p_Item = "";
+			itemRef = itemIndex;
+		}
+
+		VitalityBonus();
 	}
 };
+int Player::VitalityBonus() {
+	for (int i = 0; i < inventory->size(); i++) {
+		if (inventory[i] == "sword") {
+			for (int j = 0; j < inventory->size(); j++) {
+				if (inventory[j] == "armor") {
+					 setVitality(40);
+					 return getVitality();
+				}
+			}
+		}
+		else if (inventory[i] == "armor"){
+			for (int j = 0; j < inventory->size(); j++) {
+				if (inventory[j] == "sword") {
+					setVitality(40);
+					return getVitality();
+				}
+			}
+			break;
+		}
+		else {
+			setVitality(25);
+			return getVitality();
+		}
+	}
+}
 
 //View Commands
 void Player::Help() {
@@ -274,4 +324,6 @@ void Player::getCommand() {
 void Player::ClearScreen() {
 	system("CLS");
 	m.Display();
+	std::cout << std::endl << itemCount;
+	std::cout << std::endl << itemRef;
 }

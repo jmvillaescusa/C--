@@ -4,6 +4,7 @@
 #include "baseStats.h"
 #include <string>
 
+
 class Player : public BaseStats {
 public:
 	bool isRunning = true;
@@ -27,6 +28,8 @@ public:
 	void RemoveItem();
 	void Help();
 	void getCommand();
+
+	int VitalityBonus();
 
 	void ClearScreen();
 
@@ -52,7 +55,7 @@ public:
 	void setLuck(int l) { luck = l; }
 	void setName(std::string n) { name = n; }
 
-	std::string inventory[4] = {" "};
+	std::string inventory[4];
 };
 #endif // !PLAYER
 
