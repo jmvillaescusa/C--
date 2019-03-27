@@ -1,9 +1,9 @@
 #ifndef GUARD
 #define GUARD
 
-#include "baseStats.h"
+#include "enemy.h"
 
-class Guard : public BaseStats {
+class Guard : public Enemy {
 public:
 	Guard();
 	~Guard();
@@ -12,7 +12,11 @@ public:
 	void Attack();
 	void Defend();
 
-private:
+	void ShowStats();
+	void BonusOn();
+	void BonusOff();
+
+protected:
 	std::string potion = "potion";
 	std::string key = "key";
 

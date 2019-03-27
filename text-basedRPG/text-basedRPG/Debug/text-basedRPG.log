@@ -1,6 +1,2 @@
-﻿  player.cpp
-c:\_projects\gamedev\c--\text-basedrpg\text-basedrpg\player.cpp(278): warning C4018: '<': signed/unsigned mismatch
-  text-basedRPG.cpp
-  Generating Code...
-c:\_projects\gamedev\c--\text-basedrpg\text-basedrpg\player.cpp(292): warning C4715: 'Player::StatBonus': not all control paths return a value
+﻿  text-basedRPG.cpp
   text-basedRPG.vcxproj -> C:\_Projects\GameDev\C--\text-basedRPG\Debug\text-basedRPG.exe

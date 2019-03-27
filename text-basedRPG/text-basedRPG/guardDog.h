@@ -1,9 +1,9 @@
 #ifndef GUARDDOG
 #define GUARDDOG
 
-#include "baseStats.h"
+#include "enemy.h"
 
-class GuardDog : public BaseStats {
+class GuardDog : public Enemy {
 public:
 	GuardDog();
 	~GuardDog();

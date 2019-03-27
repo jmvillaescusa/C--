@@ -1,5 +1,11 @@
 #include "player.h"
+#include "guard.h"
+#include "guardDog.h"
 #include "map.h"
+
+Map m;
+Guard guard;
+GuardDog guardDog;
 
 Player::Player() {
 	name = "";
@@ -22,10 +28,31 @@ void Player::Attack() {}
 void Player::Defend() {}
 void Player::UsePotion() {}
 void Player::Flee() {}
+void Player::FightGuard() {
+	while (isAlive && guard.isAlive) {
+		if (vitality <= 0) {
+			isAlive = false;
+		}
+		else {
+			getFightCommand();
+			std::cout << name << ": " << vitality << "        Guard: " << guard.getVitality() << std::endl;
+			srand(static_cast<unsigned int>(time(0)));
+			int command = (rand() % 2) + 1;
+			if (command == 1) {
+				guard.Attack();
+				vitality -= guard.getStrength();
+			}
+			else if (command == 2) {
+				guard.Defend();
+			}
+		}
+	}
+	if (!isAlive) {
+		
+	}
+}
 
 //Movement
-int *p_Pos = 0;
-Map m;
 void Player::MoveUp() { 
 	p_Pos = &posY;
 	if (m.world[*p_Pos - 1][posX] == 1) {
@@ -47,8 +74,7 @@ void Player::MoveUp() {
 		*p_Pos -= 1;
 		m.world[*p_Pos][posX] = 3;
 		ClearScreen();
-
-		std::cout << name << " traverses through the keep.";
+		RandomChance();
 	}
 };
 void Player::MoveLeft() { 
@@ -72,8 +98,7 @@ void Player::MoveLeft() {
 		*p_Pos -= 1;
 		m.world[posY][*p_Pos] = 3;
 		ClearScreen();
-
-		std::cout << name << " traverses through the keep.";
+		RandomChance();
 	}
 };
 void Player::MoveDown() { 
@@ -96,8 +121,7 @@ void Player::MoveDown() {
 		*p_Pos += 1;
 		m.world[*p_Pos][posX] = 3;
 		ClearScreen();
-
-		std::cout << name << " traverses through the keep.";
+		RandomChance();
 	}
 };
 void Player::MoveRight() { 
@@ -125,23 +149,30 @@ void Player::MoveRight() {
 		*p_Pos += 1;
 		m.world[posY][*p_Pos] = 3;
 		ClearScreen();
-		std::cout << name << " traverses through the keep.";
+		RandomChance();
 	}
 };
+void Player::RandomChance() {
+	srand(static_cast<unsigned int>(time(0)));
+	int randChance = (rand() % luck) + 1;
 
-void Player::CheckStats() {
-	ClearScreen();
-	std::cout << "Name     | " << name << std::endl;
-	std::cout << "Vitality | " << vitality << std::endl;
-	std::cout << "Strength | " << strength << std::endl;
-	std::cout << "Defence  | " << defence << std::endl;
-	std::cout << "Speed    | " << speed << std::endl;
-	std::cout << "Luck     | " << luck << std::endl;
-};
+	if (randChance % 5 == 0) {
+		srand(static_cast<unsigned int>(time(0)));
+		int enemy = (rand() % 2) + 1;
+		if (enemy == 1) {
+			std::cout << name << " encountered a Guard!\n";
+			FightGuard();
+		}
+		else if (enemy == 2) {
+			std::cout << name << " encountered a Guard Dog!\n";
+		}
+	}
+	else {
+		std::cout << name << " traverses through the keep.\n";
+	}
+}
 
 //Inventory Management
-std::string *p_Item = 0;
-int itemCount = 0;
 void Player::PickUp() { 
 	//Picks up a sword
 	if (itemCount == MAX_ITEMS) {
@@ -264,22 +295,21 @@ void Player::RemoveItem() {
 	}
 };
 int Player::StatBonus() {
-	bool bonusOn = false;
 	for (int i = 0; i <= 4; i++) {
 		if (inventory[i] == "sword") {
 			for (int j = 0; j < 4; j++) {
 				if (inventory[j] == "armor") {
-					 bonusOn = true;
-					 setVitality(40);
-					 setLuck(15);
-					 return getVitality(), getLuck();
+					guard.BonusOn();
+					setVitality(40);
+					setLuck(15);
+					return getVitality(), getLuck();
 				}
 			}
 		}
 		else if (inventory[i] == "armor"){
 			for (int j = 0; j < inventory->size(); j++) {
 				if (inventory[j] == "sword") {
-					bonusOn = true;
+					guard.BonusOn();
 					setVitality(40);
 					setLuck(15);
 					return getVitality(), getLuck();
@@ -287,17 +317,27 @@ int Player::StatBonus() {
 			}
 		}
 		else {
-			bonusOn = false;
+			guard.BonusOff();
 			setVitality(25);
 			setLuck(5);
 			return getVitality(), getLuck();
 		}
 	}
 };
+void Player::CheckStats() {
+	ClearScreen();
+	std::cout << "Name     | " << name << std::endl;
+	std::cout << "Vitality | " << vitality << std::endl;
+	std::cout << "Strength | " << strength << std::endl;
+	std::cout << "Defence  | " << defence << std::endl;
+	std::cout << "Speed    | " << speed << std::endl;
+	std::cout << "Luck     | " << luck << std::endl;
+};
 
 //View Commands
 void Player::Help() {
 	ClearScreen();
+	std::cout << "List of Commands\n=====================\n";
 	std::cout << "'w' - move up\n";
 	std::cout << "'a' - move left\n";
 	std::cout << "'s' - move down\n";
@@ -308,14 +348,13 @@ void Player::Help() {
 	std::cout << "'u' - use a potion\n";
 	std::cout << "'r' - remove an item\n";
 	std::cout << "'q' - quit game\n";
-
 };
 void Player::getCommand() {
 	char c;
 	std::cout << "\nCommand: ";
 	std::cin >> c;
 
-	if (c == 'w') { MoveUp(); }
+	     if (c == 'w') { MoveUp(); }
 	else if (c == 'a') { MoveLeft(); }
 	else if (c == 's') { MoveDown(); }
 	else if (c == 'd') { MoveRight(); }
@@ -325,16 +364,32 @@ void Player::getCommand() {
 	else if (c == 'u') { UsePotion(); }
 	else if (c == 'r') { RemoveItem(); }
 	else if (c == 'h') { Help();  }
+	else if (c == 'j') { }
 	else if (c == 'q') { 
 		isRunning = false; 
 		std::cout << std::endl << "Thanks for playng!\n";
 	}
 	else { std::cout << "Invalid Input "; }
 };
+void Player::getFightCommand() {
+	ClearScreen();
+	viewFightCommand();
+	int i;
+	std::cout << "\n What should " << name << " do? ";
+	std::cin >> i;
+
+	     if (i == 1) { Attack(); }
+	else if (i == 2) { Defend(); }
+	else if (i == 3) { UsePotion(); }
+	else if (i == 4) { Flee(); }
+}
+void Player::viewFightCommand() {
+	std::cout << "1. Attack      2. Defend\n";
+	std::cout << "3. Use Potion  4. Flee\n\n";
+}
 
 void Player::ClearScreen() {
 	system("CLS");
 	m.Display();
 	std::cout << std::endl;
-	std::cout << std::endl << itemCount << std::endl;
 };

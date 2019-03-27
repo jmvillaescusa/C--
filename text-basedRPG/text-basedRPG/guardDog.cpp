@@ -1,6 +1,5 @@
 #include "guardDog.h"
 
-
 GuardDog::GuardDog() {
 	vitality = 12;
 	strength = 5;

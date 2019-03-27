@@ -33,6 +33,7 @@ public:
 public:
 	void Display();
 	char MapIndex(int);
+	void ClearScreen();
 
 };
 #endif // !MAP

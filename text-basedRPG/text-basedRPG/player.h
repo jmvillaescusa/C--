@@ -14,6 +14,10 @@ public:
 	void Defend();
 	void UsePotion();
 	void Flee();
+	void FightGuard();
+
+	void getFightCommand();
+	void viewFightCommand();
 
 	//Map Commands
 	void MoveUp();
@@ -26,6 +30,8 @@ public:
 	void RemoveItem();
 	void Help();
 	void getCommand();
+
+	void RandomChance();
 
 	int StatBonus();
 
@@ -45,7 +51,11 @@ private:
 	int armorPosY;
 	std::string armor = "armor";
 
+	int itemCount = 0;
 	const int MAX_ITEMS = 4;
+
+	int *p_Pos = 0;
+	std::string *p_Item = 0;
 
 public:
 	//Getter

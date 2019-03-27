@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <ctime>
 
 class BaseStats {
 protected:
@@ -26,5 +28,7 @@ public:
 
 	virtual void Attack() {};
 	virtual void Defend() {};
+
+	bool isAlive = true;
 };
 #endif // !BASESTATS

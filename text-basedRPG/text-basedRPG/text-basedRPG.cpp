@@ -1,6 +1,6 @@
 #include "player.h"
+#include "map.h"
 #include <fstream>
-
 
 int main()
 {
