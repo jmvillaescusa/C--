@@ -9,12 +9,10 @@ public:
 	~Guard();
 	
 	//Fighting Commands
-	void Attack();
-	void Defend();
+	void Attack(int&vit);
+	void Defend(int&str);
 
 	void ShowStats();
-	void BonusOn();
-	void BonusOff();
 
 protected:
 	std::string potion = "potion";

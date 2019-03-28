@@ -14,7 +14,7 @@ public:
 	void Defend();
 	void UsePotion();
 	void Flee();
-	void FightGuard();
+	//void FightGuard(Guard & g);
 
 	void getFightCommand();
 	void viewFightCommand();
@@ -32,8 +32,6 @@ public:
 	void getCommand();
 
 	void RandomChance();
-
-	int StatBonus();
 
 	void ClearScreen();
 

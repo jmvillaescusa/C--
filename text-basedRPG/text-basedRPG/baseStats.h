@@ -12,6 +12,7 @@ protected:
 	int strength;
 	int defence;
 	int speed;
+	bool isAlive = true;
 
 public:
 	//Getters
@@ -19,16 +20,18 @@ public:
 	int getStrength() { return strength; }
 	int getDefence() { return defence; }
 	int getSpeed() { return speed; }
+	bool getAlive() { return isAlive; }
 
 	//Setters
 	void setVitality(int v) { vitality = v; }
 	void setStrength(int st) { strength = st; }
 	void setDefence(int d) { defence = d; }
 	void setSpeed(int sp) { speed = sp; }
+	void setAlive(bool a) { isAlive = a; }
 
 	virtual void Attack() {};
 	virtual void Defend() {};
 
-	bool isAlive = true;
+	
 };
 #endif // !BASESTATS

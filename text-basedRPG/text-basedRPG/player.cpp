@@ -4,8 +4,6 @@
 #include "map.h"
 
 Map m;
-Guard guard;
-GuardDog guardDog;
 
 Player::Player() {
 	name = "";
@@ -24,33 +22,50 @@ Player::Player() {
 } Player::~Player() {};
 
 //Fighting Commands
-void Player::Attack() {}
-void Player::Defend() {}
-void Player::UsePotion() {}
-void Player::Flee() {}
-void Player::FightGuard() {
-	while (isAlive && guard.isAlive) {
-		if (vitality <= 0) {
-			isAlive = false;
+void Player::Attack() {
+	std::cout << name << " attacks!\n";
+	getStrength();
+};
+void Player::Defend() {
+	std::cout << name << " defends!\n";
+	vitality += getDefence();
+};
+void Player::UsePotion() {};
+void Player::Flee() {};
+/*void Player::FightGuard(Guard &g) {
+	while (getAlive() && g.getAlive()) {
+		ClearScreen();
+		std::cout << name << " encountered a Guard!\n";
+		std::cout << "HP: " << vitality << "          HP: " << g.getVitality() << std::endl;
+		if (getVitality() <= 0) {
+			setAlive(false);
+		}
+		else if (g.getVitality() <= 0) {
+			g.setAlive(false);
 		}
 		else {
 			getFightCommand();
-			std::cout << name << ": " << vitality << "        Guard: " << guard.getVitality() << std::endl;
 			srand(static_cast<unsigned int>(time(0)));
 			int command = (rand() % 2) + 1;
 			if (command == 1) {
-				guard.Attack();
-				vitality -= guard.getStrength();
+				g.Attack(vitality);
 			}
 			else if (command == 2) {
-				guard.Defend();
+				g.Defend(strength);
 			}
 		}
 	}
 	if (!isAlive) {
-		
+		ClearScreen();
+		std::cout << name << " is slain in battle!\n";
+		std::cout << "GAME OVER!\n";
+		isRunning = false;
 	}
-}
+	else if (!g.getAlive()) {
+		ClearScreen();
+		std::cout << name << " defeated the Guard!\n";
+	}
+};*/
 
 //Movement
 void Player::MoveUp() { 
@@ -153,23 +168,24 @@ void Player::MoveRight() {
 	}
 };
 void Player::RandomChance() {
-	srand(static_cast<unsigned int>(time(0)));
+	/*srand(static_cast<unsigned int>(time(0)));
 	int randChance = (rand() % luck) + 1;
 
 	if (randChance % 5 == 0) {
 		srand(static_cast<unsigned int>(time(0)));
 		int enemy = (rand() % 2) + 1;
 		if (enemy == 1) {
-			std::cout << name << " encountered a Guard!\n";
-			FightGuard();
+			Guard guard;
+			FightGuard(guard);
 		}
 		else if (enemy == 2) {
 			std::cout << name << " encountered a Guard Dog!\n";
 		}
 	}
 	else {
-		std::cout << name << " traverses through the keep.\n";
-	}
+		
+	}*/
+	std::cout << name << " traverses through the keep.\n";
 }
 
 //Inventory Management
@@ -230,7 +246,6 @@ void Player::PickUp() {
 			ClearScreen();
 			std::cout << "There is nothing to pick up.";
 		}
-		StatBonus();
 	}
 };
 void Player::ViewInventory() {
@@ -291,37 +306,6 @@ void Player::RemoveItem() {
 		else {
 			std::cout << "Invalid Input.";
 		}
-		StatBonus();
-	}
-};
-int Player::StatBonus() {
-	for (int i = 0; i <= 4; i++) {
-		if (inventory[i] == "sword") {
-			for (int j = 0; j < 4; j++) {
-				if (inventory[j] == "armor") {
-					guard.BonusOn();
-					setVitality(40);
-					setLuck(15);
-					return getVitality(), getLuck();
-				}
-			}
-		}
-		else if (inventory[i] == "armor"){
-			for (int j = 0; j < inventory->size(); j++) {
-				if (inventory[j] == "sword") {
-					guard.BonusOn();
-					setVitality(40);
-					setLuck(15);
-					return getVitality(), getLuck();
-				}
-			}
-		}
-		else {
-			guard.BonusOff();
-			setVitality(25);
-			setLuck(5);
-			return getVitality(), getLuck();
-		}
 	}
 };
 void Player::CheckStats() {
@@ -369,10 +353,9 @@ void Player::getCommand() {
 		isRunning = false; 
 		std::cout << std::endl << "Thanks for playng!\n";
 	}
-	else { std::cout << "Invalid Input "; }
+	else { ClearScreen(); std::cout << "Invalid Input\n"; }
 };
 void Player::getFightCommand() {
-	ClearScreen();
 	viewFightCommand();
 	int i;
 	std::cout << "\n What should " << name << " do? ";

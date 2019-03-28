@@ -7,12 +7,13 @@ Guard::Guard() {
 	speed = 15;
 } Guard::~Guard() {};
 
-void Guard::Attack() {
+void Guard::Attack(int&vit) {
 	std::cout << "The Guard attacks!\n";
+	vit -= getStrength();
 };
-void Guard::Defend() {
+void Guard::Defend(int&str) {
 	std::cout << "The Guard raises the shield!\n";
-	vitality += defence;
+	vitality = vitality + defence - str;
 };
 
 void Guard::ShowStats() {
@@ -21,14 +22,3 @@ void Guard::ShowStats() {
 	std::cout << "DEF | " << defence << std::endl;
 	std::cout << "SPE | " << speed << std::endl;
 };
-
-void Guard::BonusOn() {
-	setVitality(35);
-	setStrength(12);
-	setDefence(5);
-};
-void Guard::BonusOff() {
-	setVitality(20);
-	setStrength(7);
-	setDefence(3);
-}
