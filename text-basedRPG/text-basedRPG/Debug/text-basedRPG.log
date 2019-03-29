@@ -1,2 +1,3 @@
 ﻿  player.cpp
+c:\_projects\gamedev\c--\text-basedrpg\text-basedrpg\player.cpp(390): warning C4715: 'Player::StatBonus': not all control paths return a value
   text-basedRPG.vcxproj -> C:\_Projects\GameDev\C--\text-basedRPG\Debug\text-basedRPG.exe

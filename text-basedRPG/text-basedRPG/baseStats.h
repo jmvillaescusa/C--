@@ -9,6 +9,7 @@
 class BaseStats {
 protected:
 	int vitality;
+	int health;
 	int strength;
 	int defence;
 	int speed;
@@ -17,6 +18,7 @@ protected:
 public:
 	//Getters
 	int getVitality() { return vitality; }
+	int getHealth() { return health; }
 	int getStrength() { return strength; }
 	int getDefence() { return defence; }
 	int getSpeed() { return speed; }
@@ -24,6 +26,7 @@ public:
 
 	//Setters
 	void setVitality(int v) { vitality = v; }
+	void setHealth(int h) { health = h; }
 	void setStrength(int st) { strength = st; }
 	void setDefence(int d) { defence = d; }
 	void setSpeed(int sp) { speed = sp; }
@@ -31,7 +34,5 @@ public:
 
 	virtual void Attack() {};
 	virtual void Defend() {};
-
-	
 };
 #endif // !BASESTATS

@@ -1,31 +1,38 @@
 ========================================================================
 Characters & Stats
 ========================================================================
+***Stats***
+VIT - vitality, max health
+STR - strength, attack power
+DEF - defence, the value is added to health
+SPE - speed, who ever has a higher value goes first
+LUK - luck, influences the RNG of the game
+
 Player:
  - Name will be inputed by user
  - Will have an inventory (limit of 4 items)
  - Stats:
-   - Vitality | 25, 40 with sword and armor
-   - Strength | 10, 20 with sword
-   - Defence  | 5, 7 with armor
-   - Speed    | 30
-   - Luck     | 5, 15 with sword and armor
+   - VIT | 25, 40 with sword and armor
+   - STR | 10, 20 with sword
+   - DEF | 5, 7 with armor
+   - SPE | 30
+   - LUK | 5, 15 with sword and armor
 
 Guard:
  - Might possess the key to the door (random chance based on luck)
  - Might possess a potion for healing (random chance based on luck)
  - Stats:
-   - Vitality | 20, 35 if player possess sword and armor
-   - Strength | 7, 12 if player possess sword
-   - Defence  | 3, 5 if player possess armor
-   - Speed    | 15
+   - VIT | 20, 35 if player possess sword and armor
+   - STR | 7, 12 if player possess sword
+   - DEF | 3, 5 if player possess armor
+   - SPE | 15
 
 Guard dog:
  - They possess no items
  - Stats:
-   - Vitality | 12
-   - Strength | 5
-   - Speed    | 40
+   - VIT | 12
+   - STR | 5
+   - SPE | 40
 
 ========================================================================
 Map
@@ -71,8 +78,8 @@ The user must enter these below to make an action
 'h' - view commands
 
 In a fight
-'1' - Attack, vitality - strength
-'2' - Defend, vitality + defence - strength
+'1' - Attack, health - strength
+'2' - Defend, health + defence - strength
 '3' - Use potion, rengerates vitality (vitality += 10)
 '4' - Escape, has a chance to fail and lose a turn
 Enemies can only attack and defend

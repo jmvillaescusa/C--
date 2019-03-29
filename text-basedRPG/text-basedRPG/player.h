@@ -16,20 +16,22 @@ public:
 	void Flee();
 	//void FightGuard(Guard & g);
 
-	void getFightCommand();
-	void viewFightCommand();
+	//void getFightCommand();
+	//void viewFightCommand();
 
 	//Map Commands
 	void MoveUp();
 	void MoveLeft();
 	void MoveDown();
 	void MoveRight();
-	void CheckStats();
 	void PickUp();
 	void ViewInventory();
 	void RemoveItem();
 	void Help();
 	void getCommand();
+
+	void CheckStats();
+	int StatBonus();
 
 	void RandomChance();
 
@@ -67,7 +69,7 @@ public:
 	void setLuck(int l) { luck = l; }
 	void setName(std::string n) { name = n; }
 
-	std::string inventory[4];
+	std::string inventory[4] = {"","","potion"};
 };
 #endif // !PLAYER
 
